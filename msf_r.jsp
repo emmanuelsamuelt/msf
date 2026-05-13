@@ -1,0 +1,292 @@
+<%-- 
+    Document   : donations
+    Created on : 8 Apr, 2025, 5:42:16 PM
+    Author     : asst_
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Your Camp Matters!">
+        <meta name="keywords" content="Camp President Report, Your Camp Matters!">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Donations | Recurring Payments Consent Form</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <style>
+            body,
+            html {
+                height: 100%;
+                margin: 0;
+            }
+
+            .bg {
+                /* The image used */
+                background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("gidlog.jpg");
+                /* Full height */
+                height: 100%;
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 200px 200px;
+            }
+            .navbar {
+                top: 0;
+                width: 100%;
+                z-index: 9999;
+                position: fixed;
+                background-color: #01354a;
+            }
+            .container{
+                height: 100%;
+                align-content: center;
+            }
+
+            .card{
+                height: 370px;
+                margin-top: auto;
+                margin-bottom: auto;
+                width: 400px;
+                background-color: rgba(0,0,0,0.5) !important;
+            }
+
+            .social_icon span{
+                font-size: 60px;
+                margin-left: 10px;
+                color: #FFC312;
+            }
+
+            .social_icon span:hover{
+                color: white;
+                cursor: pointer;
+            }
+
+            .card-header h3{
+                color: white;
+            }
+
+            .social_icon{
+                position: absolute;
+                right: 20px;
+                top: -45px;
+            }
+
+            .input-group-prepend span{
+                width: 50px;
+                background-color: #FFC312;
+                color: black;
+                border:0 !important;
+            }
+
+            input:focus{
+                outline: 0 0 0 0  !important;
+                box-shadow: 0 0 0 0 !important;
+
+            }
+
+            .remember{
+                color: white;
+            }
+
+            .remember input
+            {
+                width: 20px;
+                height: 20px;
+                margin-left: 15px;
+                margin-right: 5px;
+            }
+
+            .login_btn{
+                color: black;
+                background-color: #FFC312;
+                width: 100px;
+            }
+
+            .login_btn:hover{
+                color: black;
+                background-color: white;
+            }
+
+            .links{
+                color: white;
+            }
+
+            .links a{
+                margin-left: 4px;
+            }
+
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background-color: #01354a !important;
+                color: yellow;
+                text-align: center;
+                font-size: 11px;
+                padding: 10px;
+            }
+
+            *{
+                margin: 0;
+                padding: 0;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+            h1{
+                font-size: 2.5rem;
+                font-family: 'Montserrat';
+                font-weight: normal;
+                color: #444;
+                text-align: center;
+                margin: 2rem 0;
+            }
+
+            .wrapper{
+                width: 98%;
+                margin: 0 auto;
+                max-width: 80rem;
+            }
+
+            .cols{
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+            }
+
+            .col{
+                width: calc(33% - 4rem);
+                margin: 1rem;
+                cursor: pointer;
+            }
+
+            .container{
+                -webkit-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+                -webkit-perspective: 1000px;
+                perspective: 1000px;
+            }
+            @media screen and (max-width: 64rem){
+                .col{
+                    width: calc(33.333333% - 2rem);
+                }
+            }
+
+            @media screen and (max-width: 48rem){
+                .col{
+                    width: calc(50% - 2rem);
+                }
+            }
+
+            @media screen and (max-width: 32rem){
+                .col{
+                    width: 100%;
+                    margin: 0 0 2rem 0;
+                }
+            }
+            .back{
+                background-size: cover;
+                background-position: center;
+                -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+                transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+                -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+                transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+                transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                text-align: center;
+                min-height: 280px;
+                height: auto;
+                border-radius: 10px;
+                color: #fff;
+                font-size: 1.5rem;
+            }
+
+            .back{
+                background: #cedce7;
+                background: -webkit-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+                background: -o-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+                background: linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+            }
+            .container:hover .front,
+            .container:hover .back{
+                -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+                transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+                -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+                transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+                transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            }
+
+            .back{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
+
+            .container .back{
+                -webkit-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+                -webkit-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+            }
+
+            .container .front{
+                -webkit-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+                -webkit-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+            }
+
+            .container:hover .back{
+                -webkit-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+                -webkit-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+            }
+
+            .container:hover .front{
+                -webkit-transform: rotateY(-180deg);
+                transform: rotateY(-180deg);
+                -webkit-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+            }
+        </style>
+        <script async src="https://whatsform.com/launcher.js" id="mf-widget" data-id="lxl0we" data-message=">Donations Recurring Payments Consent Form"></script>
+    </head>
+    <body class="container-fluid" style="background-color: #fff; width: 100%;" id="myContainer"> 
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container" style="margin-left: 15px;">  
+                <a href="#"><img alt="The Gideons International" src="img/GideonsLogo2.png" align="left"  height="50" width="170"  style="padding: 5px;"/></a> 
+            </div>
+        </nav>
+        <br><br>
+        <section id="main" style="padding: 20px 0px;">
+            
+            <!--<iframe src="https://whatsform.com/recurringdonations" title="Donations Recurring Payments Consent Form" width="100%" height="700px;" frameBorder="0" style="border:none;"></iframe>-->
+            <form style="text-align: center;">
+                <!--<img style="height:30%;width:30%;" src="https://uploads.whatsform.com/6684ee018a2619cbcb3395fd/C1746F5F-0824-473A-B220-10CFA3728D64-1742903625369.png?x-t=1742903628728" style="size" alt="alt"/><br>-->
+                    <script src="https://cdn.razorpay.com/static/widget/subscription-button.js" data-subscription_button_id="pl_SojYpMAZRVRUY6" data-button_theme="brand-color" async> </script> </form>
+                </section>  
+
+        <footer class="footer">
+            <span>Help desk : support@gideons.org.in</span>
+        </footer>
+    </body>
+</html>
